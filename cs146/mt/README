@@ -1,0 +1,17 @@
+jcrook@cs.brown.edu
+
+
+F- Score for veryDumb -- 0.63
+
+F- Score for noisyChannel -- 0.55
+
+
+The noisyChannel translations look slightly more English-y, but holistically less coherent. This makes sense; since the noisy channel model incorporates bigram probabilities into its translation, the output is more likely to show proper english structure on a small scale, like within any given 3gram or 4gram. 
+
+However, while the veryDumb translations may appear less grammatical, I think it's much easier to figure out what's actually being said. Because each word is translated individually, regardless of linguistic context, the linguistic content is more often fully accounted for. Because our F-score only cares about the proper translation of each individual word in a sentence, it makes sense that the score is higher for the verydumb decoder because the verydumb decoder translates each word independently.
+
+As for our method of evaluation, I think it represents the relative effectiveness of our two decoders accurately; I do think verydumb yields a better translation than noisychannel. In spite of this, the f-score does ignore the value of proper alignment. If there was some evaluation method that rewarded properly aligned subsequences of the translated output, I would be curious to see if the noisychannel model fares better. With French and English, it may not, because French and English tend to have similar word orders. However, translating from a language like Hungarian, with an especially different word order typology than English, the noisyChannel model may have a leg up.
+
+Our evaluation method (and also our translation method in general) would probably also fare poorly translating from wordy, word-order dependent languages like English to less wordy, more conjugationally complex languages (like agglutinative languages). 
+Consider the Yupik sentence "iitgesqesagiisqa" (one word) which translates to "He asked him  to go ask him to come in." Both our method of machine translation and translation evaluation could not begin to handle this sort of task. But that is neither here nor there.
+

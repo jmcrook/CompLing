@@ -1,0 +1,7 @@
+jcrook@cs.brown.edu
+
+My correct percentage for the unsmoothed tagger is 0.9288
+My correct percentage for the smoothed tagger is 0.9384
+
+For some reason, both of my taggers output nothing for line 598 of the test data, and only for that line, so score.py skips specifically line 598. (It should be easy to find the if statement I'm referring to). Everything else works fine.
+
